@@ -1,0 +1,38 @@
+const express = require("express");
+const jwt = require("jsonwebtoken");
+
+const app = express();
+const secretKey = "secret123";
+
+app.get("/", (req, res) => {
+    res.json({
+        message: "simple message"
+    });
+});
+
+app.post("/login", (req, res) => {
+    const user = {
+        id: 1,
+        username: "anil",
+        email: "anil@email.com"
+    }
+    jwt.sign({ user }, secretKey, { expiresIn: '300s' }, (err, token) => {
+        res.json({token, user});   
+    });
+});
+
+app.listen(3000);
+
+
+##################################################
+
+
+
+{
+    "token": "ey...",
+    "user": {
+        "id": 1,
+        "username": "anil",
+        "email": "anil@email.com"
+    }
+}

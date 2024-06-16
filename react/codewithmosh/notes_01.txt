@@ -1,0 +1,49 @@
+main.tsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import 'bootstrap/dist/css/bootstrap.css'
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+
+
+
+
+
+App.tsx
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  return <div><ListGroup /></div>;
+}
+
+export default App;
+
+
+
+
+
+ListGroup.tsx
+function ListGroup() {
+  return (
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">A second item</li>
+        <li className="list-group-item">A third item</li>
+        <li className="list-group-item">A fourth item</li>
+        <li className="list-group-item">And a fifth item</li>
+      </ul>
+    </>
+  );
+}
+
+export default ListGroup;
+
+In React, a component can't return more than one element which is why we need the fragments.
+<Fragment> or <> is a lot more efficient than creating a <div> tag.

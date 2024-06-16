@@ -1,0 +1,68 @@
+main.tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+
+
+App.tsx
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  return <div><ListGroup /></div>;
+}
+
+export default App;
+
+
+
+
+
+ListGroup.tsx
+import { MouseEvent } from "react";
+
+function ListGroup() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+  const handleClick = (event: MouseEvent) => console.log(event);
+
+
+  return (
+    <>
+      <h1>List</h1>
+      {items.length === 0 && <p>No item found!</p>}
+      <ul className="list-group">
+        {items.map((item, index) => (
+          <li className="list-group-item" key={item} onClick={handleClick}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+export default ListGroup;
+
+OUTPUT
+Object { 
+    _reactName: "onClick", 
+    _targetInst: null, 
+    type: "click", 
+    nativeEvent: click, 
+    target: li.list-group-item, 
+    currentTarget: li.list-group-item, 
+    eventPhase: 3, 
+    bubbles: true, 
+    cancelable: true, 
+    timeStamp: 2321, … 
+}

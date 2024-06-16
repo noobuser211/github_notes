@@ -1,0 +1,47 @@
+main.tsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+
+
+App.tsx
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  return <div><ListGroup /></div>;
+}
+
+export default App;
+
+
+
+
+
+ListGroup.tsx
+function ListGroup() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  items = [];
+
+  const getMessage = () => {
+    return items.length === 0 ? <p>No item found</p> : null;
+  };
+
+  return (
+    <>
+      <h1>List</h1>
+      {getMessage()}
+    </>
+  );
+}
+
+export default ListGroup;

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(210,210,210);
+}
+
+.form {
+    border: 1px solid red;
+    background-color: white;
+    padding: 25px;
+    margin: 50px auto;
+    width: 500px;
+
+}
+
+.input_field {
+    padding: 10px;
+}

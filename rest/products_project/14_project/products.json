@@ -1,0 +1,54 @@
+[
+    {
+        "name": "iphone",
+        "price": 154,
+        "featured": true,
+        "company": "apple"
+    },
+    {
+        "name": "iphone10",
+        "price": 1154,
+        "featured": true,
+        "company": "apple"
+    },
+    {
+        "name": "watch",
+        "price": 204,
+        "company": "apple"
+    },
+    {
+        "name": "watch10",
+        "price": 304,
+        "company": "apple"
+    },
+    {
+        "name": "macbook",
+        "price": 1324,
+        "company": "apple"
+    },
+    {
+        "name": "macbookpro",
+        "price": 1234,
+        "company": "apple"
+    },
+    {
+        "name": "macbookair",
+        "price": 22,
+        "company": "apple"
+    },
+    {
+        "name": "appletv",
+        "price": 34,
+        "company": "apple"
+    },
+    {
+        "name": "iphone",
+        "price": 123,
+        "company": "apple"
+    },
+    {
+        "name": "ipad",
+        "price": 45,
+        "company": "apple"
+    }
+]

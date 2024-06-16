@@ -1,0 +1,63 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+
+
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  return <div><ListGroup /></div>;
+}
+
+export default App;
+
+
+
+
+
+import { useState } from "react";
+
+function ListGroup() {
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  // useState(-1) returns an array with two elements
+  // 0: variable (selectedIndex), 1: updater function
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  return (
+    <>
+      <h1>List</h1>
+      {items.length === 0 && <p>No item found!</p>}
+      <ul className="list-group">
+        {items.map((item, index) => (
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+export default ListGroup;
+
+We use the hook because the value of the 'selectedIndex' is dynamic.

@@ -1,0 +1,42 @@
+Passing Children
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+
+
+import Alert from "./components/Alert";
+
+function App() {
+  return (
+    <div>
+      <Alert text="Hello World!" />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+interface Props {
+  text: string;
+}
+
+const Alert = ({ text }: Props) => {
+  return <div className="alert alert-primary">{text}</div>;
+};
+
+export default Alert;
+

@@ -1,0 +1,52 @@
+main.tsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import 'bootstrap/dist/css/bootstrap.css'
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+
+
+
+
+
+App.tsx
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  return <div><ListGroup /></div>;
+}
+
+export default App;
+
+
+
+
+
+ListGroup.tsx
+function ListGroup() {
+  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+
+  return (
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li
+            className="list-group-item"
+            key={item}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+export default ListGroup;
+
